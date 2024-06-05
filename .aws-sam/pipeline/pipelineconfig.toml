@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "robudexIT"
+github_repo = "sam-app"
+deployment_branch = "main"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::637423601936:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-v6C9VNuOsJ0I"
+cloudformation_execution_role = "arn:aws:iam::637423601936:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-YiAhN4gj8d15"
+artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-byubwtnt53zl"
+image_repository = ""
+region = "us-east-1"
+
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::637423601936:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-DqLtmL9fFKme"
+cloudformation_execution_role = "arn:aws:iam::637423601936:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-0tSyPxdSDSFn"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline--artifactsbucket-aday3aly7kas"
+image_repository = ""
+region = "us-east-1"
